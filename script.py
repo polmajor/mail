@@ -24,7 +24,7 @@ def send():
     m = input_data["message"]
     
     #API function
-    conn = initialize(l,p)
-    response = send_email(conn,f,t,m)
+    #conn = initialize(l,p)
+    #response = send_email(conn,f,t,m)
 
-    return response
+    return input_data

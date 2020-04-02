@@ -4,6 +4,7 @@ from flask import Flask, request
 from flask_cors import CORS, cross_origin
 import smtplib
 from serve import initialize, send_email
+import datetime
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -16,15 +17,15 @@ def send():
     """
     
     # Data the user input
-    input_data = request.json
+    input_data = request.json 
     l = input_data["login"]
     p = input_data["pass"]
     f = input_data["from"]
     t = input_data["to"]
     m = input_data["message"]
     
-    #API function
-    #conn = initialize(l,p)
-    #response = send_email(conn,f,t,m)
+    #Send email
+    conn = initialize(l,p)
+    response = send_email(conn,f,t,m)
 
-    return input_data
+    return [response, input_data]

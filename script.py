@@ -28,4 +28,4 @@ def send():
     conn = initialize(l,p)
     response = send_email(conn,f,t,m)
 
-    return [response, input_data]
+    return response

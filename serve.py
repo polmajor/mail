@@ -12,5 +12,7 @@ def initialize(login, pss):
     
 def send_email(conn, f, t, m):
     date = str(datetime.datetime.today())
-    conn.sendmail(f,t,m)
+    r = conn.sendmail(f,t,m)
     conn.quit()
+    
+    return r    
